@@ -187,6 +187,11 @@ class Browser : public WindowListObserver {
   void SetAboutPanelOptions(const base::DictionaryValue& options);
 #endif
 
+#if defined(OS_MACOSX) || defined(OS_WIN)
+  bool IsEmojiPanelSupported();
+  void ShowEmojiPanel();
+#endif
+
 #if defined(OS_WIN)
   struct UserTask {
     base::FilePath program;

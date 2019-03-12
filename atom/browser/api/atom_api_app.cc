@@ -1355,6 +1355,12 @@ void App::BuildPrototype(v8::Isolate* isolate,
       .SetMethod("showAboutPanel",
                  base::Bind(&Browser::ShowAboutPanel, browser))
 #endif
+#if defined(OS_MACOSX) || defined(OS_WIN)
+      .SetMethod("isEmojiPanelSupported",
+                 base::Bind(&Browser::IsEmojiPanelSupported, browser))
+      .SetMethod("showEmojiPanel",
+                 base::Bind(&Browser::ShowEmojiPanel, browser))
+#endif
 #if defined(OS_WIN)
       .SetMethod("setUserTasks", base::Bind(&Browser::SetUserTasks, browser))
       .SetMethod("getJumpListSettings", &App::GetJumpListSettings)
