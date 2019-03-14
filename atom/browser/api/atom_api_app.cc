@@ -1334,6 +1334,8 @@ void App::BuildPrototype(v8::Isolate* isolate,
       .SetMethod("getLoginItemSettings", &App::GetLoginItemSettings)
       .SetMethod("setLoginItemSettings",
                  base::Bind(&Browser::SetLoginItemSettings, browser))
+      .SetMethod("isEmojiPanelSupported",
+                 base::Bind(&Browser::IsEmojiPanelSupported, browser))
 #if defined(OS_MACOSX)
       .SetMethod("hide", base::Bind(&Browser::Hide, browser))
       .SetMethod("show", base::Bind(&Browser::Show, browser))
@@ -1356,8 +1358,6 @@ void App::BuildPrototype(v8::Isolate* isolate,
                  base::Bind(&Browser::ShowAboutPanel, browser))
 #endif
 #if defined(OS_MACOSX) || defined(OS_WIN)
-      .SetMethod("isEmojiPanelSupported",
-                 base::Bind(&Browser::IsEmojiPanelSupported, browser))
       .SetMethod("showEmojiPanel",
                  base::Bind(&Browser::ShowEmojiPanel, browser))
 #endif

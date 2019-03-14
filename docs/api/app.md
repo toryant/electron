@@ -1184,7 +1184,7 @@ Show the app's about panel options. These options can be overridden with `app.se
 Set the about panel options. This will override the values defined in the app's
 `.plist` file on MacOS. See the [Apple docs][about-panel-options] for more details. On Linux, values must be set in order to be shown; there are no defaults.
 
-### `app.isEmojiPanelSupported` _macOS_ _Windows
+### `app.isEmojiPanelSupported`
 
 Returns `Boolean` - whether or not the current OS version allows for native emoji pickers.
 

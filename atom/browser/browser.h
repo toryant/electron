@@ -188,7 +188,6 @@ class Browser : public WindowListObserver {
 #endif
 
 #if defined(OS_MACOSX) || defined(OS_WIN)
-  bool IsEmojiPanelSupported();
   void ShowEmojiPanel();
 #endif
 
@@ -234,6 +233,8 @@ class Browser : public WindowListObserver {
   // Tell the application that application is activated with visible/invisible
   // windows.
   void Activate(bool has_visible_windows);
+
+  bool IsEmojiPanelSupported();
 
   // Tell the application the loading has been done.
   void WillFinishLaunching();
